@@ -26,9 +26,9 @@ h1{
 
 h2{
 	font-size: 2.5vw;
-	overflow: auto;
 	padding-left: 1vw;
 	padding-right: 1vw;
+	overflow-wrap: normal;
 }
 
 .header{
@@ -76,10 +76,10 @@ h2{
 
 .answer-container, .statistics-container{
 	vertical-align: middle;
-	width: 90%;
+	width: 70%;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 1.4vh 0vw;
+	padding: 1.5vh 0vw;
 	overflow: auto;
 }
 
@@ -87,6 +87,10 @@ h2{
 	border: 3px solid black;
 	border-radius: 25px;
 	background-color: #ffedce;
+}
+
+.statistics-container{
+	width: 90%;
 }
 
 #qa-container h2 {
@@ -131,4 +135,5 @@ h2{
 #statistics{
 	padding-top: 3vh;
 	padding-bottom: 3vh;
+	margin-bottom: 5vh;
 }
