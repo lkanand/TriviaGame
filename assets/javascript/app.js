@@ -124,8 +124,44 @@ var questionsAsked = 0;
 var questionsToAnswer = 10;
 var timeToAnswer = 25;
 var gifLimit = 5;
-var resultScreenShow = 5;
+var resultScreenShow = 7;
 var tickerLock = 1;
+
+function renderOpeningScreen(){
+	var header = "Do You Know Comic Books?";
+	var instruction = "Click screen to test your knowledge";
+	var arrayHeaderSpans = header.split("").map(function(element, index){
+		return $("<span id='title-" + index + "'>" + element + "</span>");
+	})
+	var arrayInstructionSpans = instruction.split("").map(function(element, index){
+		return $("<span id='instruction-" + index + "'>" + element + "</span>");
+	})
+
+	$("#batman").addClass("slide-in");
+	setTimeout(function(){
+		$("#bubble-one").removeClass("no-opacity");
+	}, 1500);
+	setTimeout(function(){
+		$("#bubble-two").removeClass("no-opacity");
+	}, 2000);
+	setTimeout(function(){
+		$("#bubble-three").removeClass("no-opacity");
+	}, 2500);
+	setTimeout(function(){
+		arrayHeaderSpans.forEach(function(element, index){
+			setTimeout(function(){
+				$("#title").append(element);
+			}, 2000 + index*200);
+		});
+	}, 2000);
+	setTimeout(function(){
+		arrayInstructionSpans.forEach(function(element, index){
+			setTimeout(function(){
+				$("#instruction").append(element);
+			}, 4600 + index*200);
+		});
+	}, 4600);
+}
 
 function replaceOpeningScreen(){
 	$("#opening-screen").addClass("hidden");
@@ -163,9 +199,9 @@ function populateQA(){
 	else {
 		$("#result-screen").addClass("hidden");
 		$("#final-statistics").removeClass("hidden");
-		if(correct >= 7)
+		if(correct >= questionsToAnswer*.7)
 			$("#verdict").text("You are a bona fide comic book nerd!");
-		else if(correct <= 3)
+		else if(correct <= questionsToAnswer*.3)
 			$("#verdict").text("Well, at least you have a life.")
 		else
 			$("#verdict").text("You have a healthy knowledge of comics.");
@@ -260,6 +296,7 @@ function openTimeUpScreen(){
 }
 
 $(document).ready(function(){
+	renderOpeningScreen();
 	$(document).on("click", function(){
 		$(document).unbind("click");
 		arrayOfQuestionObjects = shuffleArray(arrayOfQuestionObjects);
