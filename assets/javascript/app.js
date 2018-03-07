@@ -292,7 +292,8 @@ function openTimeUpScreen(){
 			$("#result-screen").addClass("hidden");
 			$("#question-screen").removeClass("hidden");
 		}
-		populateQA();}, 1000*resultScreenShow);
+		populateQA();
+	}, 1000*resultScreenShow);
 }
 
 $(document).ready(function(){
