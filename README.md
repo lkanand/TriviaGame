@@ -1,6 +1,6 @@
 # Comic Book Trivia
 
-This is a ten question trivia game that will test your knowledge about comic book heroes and villains. Since I am not actually very knowledgeable about comic books I had to rely on <a href = "https://www.usefultrivia.com/comic_book_trivia/">this site</a> to compile the game's question bank.  
+This is a ten question trivia game that will test your knowledge about comic book heroes and villains. Since I am not actually very knowledgeable about comic books I had to rely on <a href = "http://www.usefultrivia.com/comic_book_trivia/">this site</a> to compile the game's question bank.  
 
 ## How to Play
 
